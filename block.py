@@ -21,14 +21,14 @@ class Block:
 
   @staticmethod
   def mine_block(last_block, data):
-  '''
-  mines a block based on the given last_block and data
-  '''
-  timestamp = time.time_ns()
-  last_hash = last_block.hash
-  hash = f'{timestamp}-{last_hash}'
+    '''
+    mines a block based on the given last_block and data
+    '''
+    timestamp = time.time_ns()
+    last_hash = last_block.hash
+    hash = f'{timestamp}-{last_hash}'
 
-  return Block(timestamp, last_hash, hash, data)
+    return Block(timestamp, last_hash, hash, data)
 
   @staticmethod
   def genesis():
@@ -39,7 +39,7 @@ class Block:
 
 def main():
   genesis_block = Block.genesis()
-  block = mine_block(genesis_block, 'foo')
+  block = Block.mine_block(genesis_block, 'foo')
   print(block)
 
 if __name__ == '__main__':
